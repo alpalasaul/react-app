@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './Task.css'
 
@@ -30,6 +31,11 @@ class Task extends Component {
             </button>
         </p>
     }
+}
+
+// para especificar el tipo de dato que espero al mandar una propiedad hacemos lo siguiente 
+Task.propTypes = {
+    task: PropTypes.object.isRequired
 }
 
 // objeto de javascript
