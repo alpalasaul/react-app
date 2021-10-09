@@ -3,6 +3,15 @@ import React, { Component } from 'react';
 import './Task.css'
 
 class Task extends Component {
+
+    StyleCompleted() {
+        return {
+            fontSize: '20px',
+            color: this.props.task.done ? 'gray' : 'black',
+            textDecoration: this.props.task.done ? 'line-through' : 'none'
+        }
+    }
+
     render() {
         // guardar dentro de una estructura para má legibilidad
         // className="red" es propio de react y no de css
@@ -10,7 +19,7 @@ class Task extends Component {
         // <p style={redColor} esta manera se genera al guardar el estilo en una variable
         //const redColor = {background: 'red'};
         const {task} = this.props;
-        return <p>
+        return <p style={this.StyleCompleted()}>
             {task.title} - 
             {task.description} - 
             {task.done} - 
