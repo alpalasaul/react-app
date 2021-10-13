@@ -11,7 +11,8 @@ class Tasks extends Component {
             task={task} 
             key={task.id} 
             borrarTask={this.props.borrarTarea} 
-            cambiarDone={this.props.checkDone}/>);  // le pasamos el método borrar 
+            cambiarDone={this.props.checkDone}/>
+        );  // le pasamos el método borrar 
     }
 }
 

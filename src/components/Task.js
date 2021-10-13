@@ -25,12 +25,13 @@ class Task extends Component {
             {task.description} - 
             {task.done} - 
             {task.id}
-            <input type="checkbox" onChange={this.props.cambiarDone.bind(this, task.id)} />
+            <input type="checkbox" onChange={this.props.cambiarDone.bind(this, task.id)} /> 
             <button style={btnDelete} onClick={this.props.borrarTask.bind(this, task.id)}>
                 x
             </button>
         </p>
     }
+    // Se usa el 'bind' this.props.cambiarDone.bind(this, task.id) para poder obtener el id de cada Task
 }
 
 // para especificar el tipo de dato que espero al mandar una propiedad hacemos lo siguiente 

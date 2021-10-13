@@ -6,6 +6,7 @@ import tasks from './sample/task.json';
 import Tasks from './components/Tasks';
 
 import TaskForm from './components/TaskForm';
+import Posts from './components/Posts';
 
 console.log(tasks); // observear los datos en la consola
 
@@ -58,6 +59,7 @@ class App extends Component { // va en lugar de React.Component ya que lo import
           borrarTarea={this.borrarTarea} 
           tasks={this.state.tasks} 
           checkDone={this.checkDone}/> 
+        <Posts  />
       </div>
     );
   }
