@@ -9,8 +9,8 @@ export default class TaskForm extends Component {
 
     // si usamos un solo parámetro podemos usarlo sin ()
     onSubmit = (e) => { // evita use el bind
-        e.preventDefault(); // cancelamos el comportamiento de refrescar la página a cada momento
-        console.log(this.state);
+        this.props.addTask(this.state.titulo, this.state.descripcion);
+        e.preventDefault(); // cancelamos el comportamiento de refrescar la página a cada momento  
     }
 
     cambioTexto = e => {
@@ -39,7 +39,6 @@ export default class TaskForm extends Component {
             </form>
         )
     }
-
 }
 
 // export default TaskForm
