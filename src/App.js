@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
+
 import './App.css';
 // importamos los datos del json
 import tasks from './sample/task.json';
@@ -54,12 +57,24 @@ class App extends Component { // va en lugar de React.Component ya que lo import
   render() {
     return (
       <div>
-        <TaskForm addTask={this.agregarTarea}/>
-        <Tasks 
-          borrarTarea={this.borrarTarea} 
-          tasks={this.state.tasks} 
-          checkDone={this.checkDone}/> 
-        <Posts  />
+        <Router> 
+          <Link to="/">Home</Link>
+          <br />
+          <Link to="/posts">Posts</Link>
+
+          <Route exact path="/" render={() => {
+            return <div>
+                <TaskForm addTask={this.agregarTarea}/>
+                <Tasks 
+                  borrarTarea={this.borrarTarea} 
+                  tasks={this.state.tasks} 
+                  checkDone={this.checkDone}
+                /> 
+            </div>
+          }}>
+          </Route>
+          <Route path="/posts" component={Posts}/>
+        </Router>
       </div>
     );
   }
