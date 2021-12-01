@@ -26,7 +26,7 @@ class App extends Component { // va en lugar de React.Component ya que lo import
       id: this.state.tasks.length
     }
     this.setState({
-      tasks: [...this.state.tasks, newTask]
+      tasks: [...this.state.tasks, newTask] // permite agregar un nuevo elemento al final del original
     })
   }
 
@@ -42,7 +42,7 @@ class App extends Component { // va en lugar de React.Component ya que lo import
   checkDone = id => {
     const newTasks = this.state.tasks.map(task => {
       if (task.id === id) {
-      task.done = !task.done  
+      task.done = !task.done
       }      
       return task;
     })
